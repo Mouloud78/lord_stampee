@@ -47,7 +47,7 @@
           <a href="#">Mon compte</a>
           <ul class="submenu" aria-haspopup="true" aria-expanded="false">
             <li><a href="{{BASE}}/connecter">Se connecter</a></li>
-            <li><a href="{{BASE}}/inscrire">S'inscrire</a></li>
+            <li><a href="{{BASE}}/user/create">S'inscrire</a></li>
             <li>
               <a href="#">Mon profil</a>
               <ul class="submenu" aria-haspopup="true" aria-expanded="false">
