@@ -1,0 +1,134 @@
+/* Navigation principale */
+.navigation {
+  background-color: #003d33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Menu principal */
+.navigation-principale {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 0;
+}
+
+/* Logo */
+.logo img {
+  max-width: 60px;
+  height: auto;
+}
+
+/* Liens du menu principal */
+.navigation-principale a {
+  display: block;
+  padding: 10px 15px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  font-size: 1rem;
+}
+
+a:hover {
+  background-color: #e76f51;
+  color: white;
+  transform: scale(1.05);
+}
+
+.navigation-principale > li {
+  position: relative;
+}
+
+/* Sous-menu */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #264653;
+  display: none;
+  min-width: 200px;
+  list-style: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+li:hover .submenu {
+  display: block;
+  opacity: 1;
+}
+
+.submenu a {
+  display: block;
+  padding: 12px 18px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, font-weight 0.3s;
+  font-size: 0.95rem;
+}
+
+.submenu a:hover {
+  font-weight: 600;
+  background-color: #333;
+}
+
+.submenu a:focus {
+  outline: 3px solid #ffb703;
+  background-color: #e76f51;
+}
+
+.burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .navigation {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .navigation-principale {
+    flex-direction: column;
+    width: 100%;
+    background: #003d33;
+    display: none;
+    padding: 10px 0;
+    gap: 0;
+  }
+
+  .navigation-principale.active {
+    display: flex;
+  }
+
+  .navigation-principale a {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    opacity: 1;
+    background-color: #1f2f2d;
+    border-left: 3px solid #e76f51;
+    padding-left: 10px;
+  }
+
+  li.show-submenu > .submenu {
+    display: block;
+  }
+
+  .burger {
+    display: block;
+  }
+}

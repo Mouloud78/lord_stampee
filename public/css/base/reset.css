@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mulish", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  height: 100vh;
+}
+
+.titre {
+  text-align: center;
+}
