@@ -19,7 +19,7 @@
       <button class="burger" aria-label="Menu mobile">☰</button>
 
       <ul class="navigation-principale">
-        <li><a href="{{BASE}}/accueil">Accueil</a></li>
+        <li><a href="{{BASE}}/">Accueil</a></li>
         <li>
           <a href="{{BASE}}/enchere">Enchères</a>
           <ul class="submenu" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +46,7 @@
         <li>
           <a href="#">Mon compte</a>
           <ul class="submenu" aria-haspopup="true" aria-expanded="false">
-            <li><a href="{{BASE}}/connecter">Se connecter</a></li>
+            <li><a href="{{BASE}}/login">Se connecter</a></li>
             <li><a href="{{BASE}}/user/create">S'inscrire</a></li>
             <li>
               <a href="#">Mon profil</a>
