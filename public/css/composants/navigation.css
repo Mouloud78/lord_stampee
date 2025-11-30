@@ -14,7 +14,24 @@
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin: 0;
+  margin-inline: 80px;
+}
+
+.navigation-principale .nav-username {
+  display: flex;
+  align-items: center;
+  color: chartreuse;
+  font-size: 1rem;
+  font-weight: 400;
+  gap: 5px;
+}
+
+/* Style du span */
+.navigation-principale .nav-username span {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
 }
 
 /* Logo */
@@ -33,7 +50,7 @@
   font-size: 1rem;
 }
 
-a:hover {
+a:not(.logo_accueil):hover {
   background-color: #e76f51;
   color: white;
   transform: scale(1.05);
