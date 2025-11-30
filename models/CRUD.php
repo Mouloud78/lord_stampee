@@ -7,7 +7,7 @@ abstract class CRUD extends \PDO
 
   final public function __construct()
   {
-    parent::__construct('mysql:host=localhost;dbname=blog_technologies_web; port=3306; charset=utf8', 'root', 'root');
+    parent::__construct('mysql:host=localhost;dbname=lord_reginal_stampee; port=3306; charset=utf8', 'root', 'root');
   }
 
   final public function select($field = null, $order = 'ASC')

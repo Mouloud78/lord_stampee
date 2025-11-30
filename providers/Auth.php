@@ -15,13 +15,13 @@ class Auth
     }
   }
 
-  static public function privilege($id)
-  {
-    if ($_SESSION['privilege_id'] == $id) {
-      return TRUE;
-    } else {
-      return view::redirect('login');
-      exit();
-    }
-  }
+  // static public function privilege($id)
+  // {
+  //   if ($_SESSION['privilege_id'] == $id) {
+  //     return TRUE;
+  //   } else {
+  //     return view::redirect('login');
+  //     exit();
+  //   }
+  // }
 }

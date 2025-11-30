@@ -12,4 +12,10 @@ Route::post('/user/create', 'UserController@store');
 
 Route::get('/login', 'AuthController@index');
 Route::post('/login', 'AuthController@store');
+
+Route::get('/login', 'AuthController@index');
+Route::post('/login', 'AuthController@store');
+Route::get('/logout', 'AuthController@delete');
+
+
 Route::dispatch();

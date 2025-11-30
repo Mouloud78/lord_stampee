@@ -1,4 +1,4 @@
-{{ include('layouts/header.php', { title:'Registration' }) }}
+{{ include('layouts/header.php', { title:'Connexion' }) }}
 
 <div style="display: flex; flex-direction:column;">
   <div class="container">

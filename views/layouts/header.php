@@ -11,14 +11,27 @@
   <header>
     <nav class="navigation">
       <div class="logo">
-        <img
-          src="{{asset}}img/logo.webp"
-          alt="Catalogue des Enchères"
-          loading="lazy" />
+        <a class="logo_accueil" href="{{BASE}}/">
+          <img
+            src="{{asset}}img/logo.webp"
+            alt="Catalogue des Enchères"
+            loading="lazy" />
+        </a>
       </div>
       <button class="burger" aria-label="Menu mobile">☰</button>
 
       <ul class="navigation-principale">
+        {% if session.username is defined %}
+        <li class="nav-username">
+
+          Bonjour :
+          <span>
+            {{ session.username }}
+          </span>
+
+        </li>
+        {% endif %}
+
         <li><a href="{{BASE}}/">Accueil</a></li>
         <li>
           <a href="{{BASE}}/enchere">Enchères</a>
@@ -46,22 +59,35 @@
         <li>
           <a href="#">Mon compte</a>
           <ul class="submenu" aria-haspopup="true" aria-expanded="false">
+
+            {% if guest == false %}
+
+            <li><a href="{{BASE}}/logout">Se déconnecter</a></li>
+            <li><a href="{{BASE}}/profil">Mon profil</a></li>
+
+            {% else %}
+
             <li><a href="{{BASE}}/login">Se connecter</a></li>
             <li><a href="{{BASE}}/user/create">S'inscrire</a></li>
+            {% endif %}
+
             <li>
-              <a href="#">Mon profil</a>
+              <a href="#">Paramètres</a>
               <ul class="submenu" aria-haspopup="true" aria-expanded="false">
                 <li><a href="{{BASE}}/enchere-suivie">Enchères suivies</a></li>
                 <li><a href="{{BASE}}/interets">Intérêts</a></li>
                 <li><a href="{{BASE}}/preferences">Préférences</a></li>
               </ul>
             </li>
+
           </ul>
         </li>
+
         <li><a href="{{BASE}}/contact">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main class="timbre__container">
+
 
   </main>
