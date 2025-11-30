@@ -6,4 +6,7 @@ use App\Controllers\TimbreController;
 
 Route::get('/', 'TimbreController@index');
 Route::get('/timbres', 'TimbreController@index');
+
+Route::get('/user/create', 'UserController@create');
+Route::post('/user/create', 'UserController@store');
 Route::dispatch();
