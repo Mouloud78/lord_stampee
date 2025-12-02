@@ -35,7 +35,7 @@ footer p {
 .container,
 .container_user {
   max-width: 1200px;
-  margin: 0 auto 75px;
+  margin: -35px auto 75px;
   display: flex;
   gap: 40px;
 }
@@ -257,16 +257,22 @@ footer p {
   font-weight: bold;
 }
 
-.form__user,
+.form__user {
+  width: 100%;
+  margin: 30% auto;
+  padding: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
 .form__login {
   width: 100%;
   margin: 10% auto;
   padding: 40px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 5px;
 }
 
-.form__user {
+/* .form__user {
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
@@ -274,7 +280,7 @@ footer p {
   max-width: 500px;
   width: 100%;
   box-sizing: border-box;
-}
+} */
 
 .login-form {
   background-color: #fff;
@@ -306,11 +312,11 @@ input[type="password"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid hsl(0, 5%, 56%);
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 input[type="email"]:focus,
@@ -337,13 +343,20 @@ input[type="submit"]:hover {
   background-color: var(--c-violet-5);
 }
 
+.label-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+}
+
 .error {
-  color: hsl(0, 38%, 89%);
+  color: hsl(0, 86%, 89%);
   padding: 5px;
   font-weight: 700;
   margin-top: -10px;
   background-color: hsl(0, 92%, 58%);
   border-radius: 3px;
+  display: block;
+  line-height: 20px;
 }
 
 @media (max-width: 768px) {
