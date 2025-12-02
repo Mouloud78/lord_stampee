@@ -21,28 +21,25 @@ class User extends CRUD
     return password_hash($password, PASSWORD_BCRYPT, $options);
   }
 
-  public function checkUser($username, $password)
+  public function checkUser($email, $password)
   {
+    $user = $this->unique('email', $email);
 
-    $user = $this->unique('email', $username);
-    if ($user) {
-
-      if (password_verify($password, $user['password'])) {
-        session_regenerate_id();
-
-        $_SESSION['user_id'] = $user['user_id'];
-
-        $_SESSION['email'] = $user['email'];
-        // $_SESSION['privilege_id'] = $user['privilege_id'];
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      return false;
+    if (!$user) {
+      return 'email_non_trouve';
     }
+
+    if (!password_verify($password, $user['password'])) {
+      return 'password_incorrect';
+    }
+
+    session_regenerate_id(true);
+    $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
+
+    return 'success';
   }
 
   public static function logout()

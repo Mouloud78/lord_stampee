@@ -1,6 +1,6 @@
 /* Navigation principale */
 .navigation {
-  background-color: #003d33;
+  background-color: hsl(265, 80%, 52%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,9 +20,10 @@
 .navigation-principale .nav-username {
   display: flex;
   align-items: center;
-  color: chartreuse;
+  color: rgb(245, 102, 80);
   font-size: 1rem;
   font-weight: 400;
+  margin-left: 60px;
   gap: 5px;
 }
 
@@ -65,7 +66,7 @@ a:not(.logo_accueil):hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #264653;
+  background-color: hsl(265, 80%, 52%);
   display: none;
   min-width: 200px;
   list-style: none;
@@ -90,7 +91,7 @@ li:hover .submenu {
 
 .submenu a:hover {
   font-weight: 600;
-  background-color: #333;
+  background-color: #e76f51;
 }
 
 .submenu a:focus {
@@ -108,7 +109,14 @@ li:hover .submenu {
 }
 
 /* Mobile */
-@media (max-width: 900px) {
+
+@media (max-width: 1182px) {
+  .navigation-principale a {
+    font-size: 0.8em;
+    padding: 5px 3px;
+  }
+}
+@media (max-width: 990px) {
   .navigation {
     flex-wrap: wrap;
     position: relative;

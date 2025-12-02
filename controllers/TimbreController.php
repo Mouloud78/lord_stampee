@@ -10,6 +10,8 @@ class TimbreController
 
   public function index($param = [])
   {
+    // var_dump($_SESSION);
+
     $timbre =  new Timbre();
 
     View::render('timbre/index', []);

@@ -12,7 +12,7 @@ body {
 }
 
 .timbre__container {
-  /* flex-grow: 1; */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,16 +32,12 @@ footer p {
   color: #333;
 }
 
-.container {
+.container,
+.container_user {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 0 auto 75px;
   display: flex;
   gap: 40px;
-}
-
-.container > * {
-  margin: 50% auto;
-  padding: 0 20px;
 }
 
 .gallery {
@@ -263,7 +259,7 @@ footer p {
 
 .form__user,
 .form__login {
-  width: 450px;
+  width: 100%;
   margin: 10% auto;
   padding: 40px;
   border: 1px solid #ccc;
@@ -299,7 +295,7 @@ footer p {
 
 label {
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   display: block;
   color: #666;
 }
@@ -339,6 +335,12 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: var(--c-violet-5);
+}
+
+.error {
+  color: red;
+  font-weight: 700;
+  margin-top: -10px;
 }
 
 @media (max-width: 768px) {

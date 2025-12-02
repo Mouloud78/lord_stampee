@@ -3,7 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="{{ asset }}css/style.css">
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    rel="stylesheet" />
+  <script src="{{assets}}js/responsive.js" defer></script>
   <title>{{ title ?? 'Lord Stampee' }}</title>
 </head>
 
@@ -21,16 +28,6 @@
       <button class="burger" aria-label="Menu mobile">☰</button>
 
       <ul class="navigation-principale">
-        {% if session.username is defined %}
-        <li class="nav-username">
-
-          Bonjour :
-          <span>
-            {{ session.username }}
-          </span>
-
-        </li>
-        {% endif %}
 
         <li><a href="{{BASE}}/">Accueil</a></li>
         <li>
@@ -56,6 +53,7 @@
             <li><a href="{{BASE}}/trouver-enchere">Trouver une enchère</a></li>
           </ul>
         </li>
+        <li><a href="{{BASE}}/contact">Contact</a></li>
         <li>
           <a href="#">Mon compte</a>
           <ul class="submenu" aria-haspopup="true" aria-expanded="false">
@@ -82,12 +80,20 @@
 
           </ul>
         </li>
+        {% if session.username is defined %}
+        <li class="nav-username">
 
-        <li><a href="{{BASE}}/contact">Contact</a></li>
+          Bonjour :
+          <span>
+            {{ session.username }}
+          </span>
+
+        </li>
+        {% endif %}
+
       </ul>
     </nav>
   </header>
   <main class="timbre__container">
-
 
   </main>
