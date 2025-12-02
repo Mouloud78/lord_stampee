@@ -338,9 +338,12 @@ input[type="submit"]:hover {
 }
 
 .error {
-  color: red;
+  color: hsl(0, 38%, 89%);
+  padding: 5px;
   font-weight: 700;
   margin-top: -10px;
+  background-color: hsl(0, 92%, 58%);
+  border-radius: 3px;
 }
 
 @media (max-width: 768px) {
