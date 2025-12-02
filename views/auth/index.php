@@ -3,23 +3,25 @@
 <div style="display: flex; flex-direction:column;">
   <div class="container">
 
-    <form method="post">
-      <h2>Login</h2>
+    <form method="post" class="form__user">
+      <h2>Connexion</h2>
 
       <label>
         Votre Email
-        {% if errors.email is defined %}
-        <div class="field-error">{{ errors.email }}</div>
-        {% endif %}
+
         <input type="email" name="email" value="{{ user.email }}">
+        {% if errors.email is defined %}
+        <div class="error">{{ errors.email }}</div>
+        {% endif %}
       </label>
 
       <label>
         Votre mot de passe
-        {% if errors.password is defined %}
-        <div class="field-error">{{ errors.password }}</div>
-        {% endif %}
+
         <input type="password" name="password">
+        {% if errors.password is defined %}
+        <div class="error">{{ errors.password }}</div>
+        {% endif %}
       </label>
 
       <input type="submit" class="btn" value="login">

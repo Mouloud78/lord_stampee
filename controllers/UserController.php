@@ -39,6 +39,7 @@ class UserController
     $validator->field('email', $postData['email'])
       ->email()
       ->unique('User')
+      ->required()
       ->max(45);
 
     $validator->field('password', $postData['password'])->min(6)->max(40)->required();
@@ -59,7 +60,6 @@ class UserController
       'username' => $postData['username'],
       'email' => $postData['email'],
       'password' => $hashedPassword,
-      // 'privilege_id' => $postData['privilege_id'],
       'create_at' => date('Y-m-d H:i:s')
     ];
 

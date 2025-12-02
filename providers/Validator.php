@@ -20,7 +20,7 @@ class Validator
   public function required()
   {
     if (empty($this->value)) {
-      $this->errors[$this->key] = "$this->name is required.";
+      $this->errors[$this->key] = "$this->name est requis.";
     }
     return $this;
   }
@@ -28,7 +28,7 @@ class Validator
   public function max($length)
   {
     if (strlen($this->value) > $length) {
-      $this->errors[$this->key] = "$this->name must be less than $length characters.";
+      $this->errors[$this->key] = "$this->name doit avoir moins de $length characters.";
     }
     return $this;
   }
@@ -36,7 +36,7 @@ class Validator
   public function min($length)
   {
     if (strlen($this->value) < $length) {
-      $this->errors[$this->key] = "$this->name must be more than $length characters.";
+      $this->errors[$this->key] = "$this->name doit avoir plus de $length characters.";
     }
     return $this;
   }
@@ -44,7 +44,7 @@ class Validator
   public function int()
   {
     if (!filter_var($this->value, FILTER_VALIDATE_INT)) {
-      $this->errors[$this->key] = "$this->name must be an integer.";
+      $this->errors[$this->key] = "$this->name doit être un entier.";
     }
     return $this;
   }
@@ -89,8 +89,29 @@ class Validator
     $model = new $model;
     $unique = $model->unique($this->key, $this->value);
     if ($unique) {
-      $this->errors[$this->key] = "$this->name must be unique.";
+      $this->errors[$this->key] = "$this->name doit être unique ...";
     }
+    return $this;
+  }
+
+
+  public function checkPassword($emailField, $passwordField)
+  {
+    $email = $_POST[$emailField] ?? null;
+    $password = $_POST[$passwordField] ?? null;
+
+    $userModel = new \App\Models\User();
+    $result = $userModel->checkUser($email, $password);
+
+    if (!isset($this->errors[$emailField])) {
+
+      if ($result === 'email_non_trouve') {
+        $this->errors[$emailField] = "Adresse email incorrecte.";
+      } elseif ($result === 'password_incorrect') {
+        $this->errors[$passwordField] = "Mot de passe incorrect.";
+      }
+    }
+
     return $this;
   }
 }
