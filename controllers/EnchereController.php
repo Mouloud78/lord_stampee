@@ -2,18 +2,18 @@
 
 namespace App\Controllers;
 
-use App\Models\Timbre;
+use App\Models\Enchere;
 use App\Providers\View;
 
-class TimbreController
+class EnchereController
 {
 
   public function index($param = [])
   {
     // var_dump($_SESSION);
 
-    $timbre =  new Timbre();
+    $timbre =  new Enchere();
 
-    View::render('timbre/index', []);
+    View::render('enchere/index', []);
   }
 }

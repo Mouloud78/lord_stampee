@@ -43,12 +43,23 @@ class AuthController
     $user = new User();
     $user->checkUser($data['email'], $data['password']);
 
-    return View::redirect('/timbres');
+    // return View::redirect('/encheres');
+    return View::render('enchere/index', [
+      'title' => 'Connexion utilisateur',
+      'successMessage' => 'Connexion réussie !',
+      'base' => BASE
+    ]);
   }
 
   public function delete()
   {
+    session_unset();
     session_destroy();
-    return View::redirect('/');
+    // return View::redirect('/');
+    return View::render('enchere/index', [
+      'title' => 'Déconnexion utilisateur',
+      'successMessage' => 'Déconnexion réussie !',
+      'base' => BASE
+    ]);
   }
 }

@@ -4,4 +4,4 @@ namespace App\Models;
 
 use App\Models\CRUD;
 
-class Timbre extends CRUD {}
+class Enchere extends CRUD {}

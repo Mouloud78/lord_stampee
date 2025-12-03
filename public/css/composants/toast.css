@@ -1,0 +1,45 @@
+.toast {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  position: fixed;
+  top: -80px;
+  right: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+.toast.succes {
+  background-color: #28a745;
+}
+
+@keyframes slideIn {
+  0% {
+    top: -80px;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    top: 40px;
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    top: 100px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast .toast-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.toast[data-toast]:hover {
+  cursor: pointer;
+}

@@ -65,8 +65,11 @@ class UserController
 
     $insert = $user->insert($data);
     if ($insert) {
-      header('Location: ' . BASE . '/');
-      exit;
+      return View::render('enchere/index', [
+        'title' => 'Créer un utilisateur',
+        'successMessage' => 'Utilisateur créé avec succès !',
+        'base' => BASE
+      ]);
     } else {
       return View::render('user/create', [
         'title' => 'Créer un utilisateur',

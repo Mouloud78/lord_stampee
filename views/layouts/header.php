@@ -11,6 +11,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     rel="stylesheet" />
   <script src="{{asset}}js/responsive.js" defer></script>
+  <script type="module" src="{{asset}}js/ToastSucces.js"></script>
   <title>{{ title ?? 'Lord Stampee' }}</title>
 </head>
 

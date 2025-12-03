@@ -4,8 +4,8 @@ use App\Routes\Route;
 use App\Controllers\UserController;
 use App\Controllers\TimbreController;
 
-Route::get('/', 'TimbreController@index');
-Route::get('/timbres', 'TimbreController@index');
+Route::get('/', 'EnchereController@index');
+Route::get('/encheres', 'EnchereController@index');
 
 Route::get('/user/create', 'UserController@create');
 Route::post('/user/create', 'UserController@store');
