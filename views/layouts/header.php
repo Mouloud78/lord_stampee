@@ -34,6 +34,10 @@
         <li>
           <a href="{{BASE}}/enchere">Enchères</a>
           <ul class="submenu" aria-haspopup="true" aria-expanded="false">
+            {% if guest == false %}
+            <li><a href="{{BASE}}/timbre/create">New Timbre</a></li>
+            {% endif %}
+
             <li><a href="{{BASE}}/enchere-encours">Enchères en cours</a></li>
             <li><a href="{{BASE}}/enchere-archive">Enchères archivées</a></li>
           </ul>

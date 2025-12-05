@@ -3,7 +3,7 @@
 <div style="display: flex; flex-direction:column;">
   <div class="container">
 
-    <form method="post" class="form__user">
+    <form method="post" class="form__auth">
       <h2>Connexion</h2>
 
       <label>
