@@ -1,6 +1,8 @@
 @import url("./composants/navigation.css");
 @import url("./composants/footer.css");
 @import url("./composants/toast.css");
+@import url("./composants/timbre.css");
+
 @import url("./base/reset.css");
 @import url("./base/variables.css");
 
@@ -265,6 +267,15 @@ footer p {
   border: 2px solid #ccc;
   border-radius: 5px;
 }
+
+.form__auth {
+  width: 100%;
+  margin: 25% auto;
+  padding: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
 .form__login {
   width: 100%;
   margin: 10% auto;

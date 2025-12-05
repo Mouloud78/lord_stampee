@@ -10,6 +10,9 @@ Route::get('/encheres', 'EnchereController@index');
 Route::get('/user/create', 'UserController@create');
 Route::post('/user/create', 'UserController@store');
 
+Route::get('/timbre/create', 'TimbreController@create');
+Route::post('/timbre/create', 'TimbreController@store');
+
 Route::get('/login', 'AuthController@index');
 Route::post('/login', 'AuthController@store');
 
